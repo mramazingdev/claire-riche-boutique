@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Edensor';
+  src: url('/src/assets/fonts/Edensor-FREE.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
