@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 const products = [
   { id: 1, name: "Signature Candle", price: "$20.00 AUD", img: "/src/assets/candle.jpg" },
@@ -8,7 +7,6 @@ const products = [
   { id: 4, name: "Organic Bath Set", price: "$30.00 AUD", img: "/src/assets/bath.jpg" },
 ];
 
-const gold = "#c9a96e";
 const cream = "#f5f0e8";
 const dark = "#0d0b09"; // Matching your Hero Dark
 

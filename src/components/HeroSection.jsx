@@ -1,9 +1,6 @@
-import { motion } from "framer-motion";
 import portrait from "../assets/hero-portrait.jpg";
 import flatlay from "../assets/hero-flatlay.jpg";
 
-const gold = "#c9a96e";
-const cream = "#f5f0e8";
 const dark = "#0d0b09";
 
 // Refined Animation Variants

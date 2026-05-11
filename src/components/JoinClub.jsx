@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 const gold = "#c9a96e";
 const cream = "#f5f0e8";

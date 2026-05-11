@@ -1,7 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
-
-// Replace these imports with your real product images
 import candle from "../assets/candle.jpg";
 import vase from "../assets/vase.jpg";
 import tray from "../assets/tray.jpg";
