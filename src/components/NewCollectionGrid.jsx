@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import React from "react";
 import candle from "../assets/candle.jpg";
 import vase from "../assets/vase.jpg";

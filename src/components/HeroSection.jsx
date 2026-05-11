@@ -1,5 +1,6 @@
 import portrait from "../assets/hero-portrait.jpg";
 import flatlay from "../assets/hero-flatlay.jpg";
+import { motion } from "framer-motion";
 
 const dark = "#0d0b09";
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const products = [
   { id: 1, name: "Signature Candle", price: "$20.00 AUD", img: "/src/assets/candle.jpg" },

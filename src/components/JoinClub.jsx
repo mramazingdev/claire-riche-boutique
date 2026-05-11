@@ -1,20 +1,20 @@
 import React from "react";
+import { motion } from "framer-motion"; // ESSENTIAL: Added this back
 
 const gold = "#c9a96e";
-const cream = "#f5f0e8";
 const dark = "#0d0b09";
+const cream = "#f5f0e8";
 
 const JoinTheClub = () => {
   return (
     <section 
       style={{ 
-        background: dark, // Matching the dark luxury theme
+        background: dark, 
         padding: "140px clamp(24px, 8vw, 60px)", 
         position: "relative",
         overflow: "hidden"
       }}
     >
-      {/* Decorative Background Element */}
       <div 
         style={{
           position: "absolute",
@@ -29,7 +29,6 @@ const JoinTheClub = () => {
       />
 
       <div className="relative z-10 max-w-3xl mx-auto text-center">
-        {/* Small Label */}
         <motion.div
           initial={{ opacity: 0, letterSpacing: "10px" }}
           whileInView={{ opacity: 1, letterSpacing: "5px" }}
@@ -39,7 +38,6 @@ const JoinTheClub = () => {
           The Inner Circle
         </motion.div>
 
-        {/* Serif Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +64,6 @@ const JoinTheClub = () => {
           private events, and bespoke offers.
         </motion.p>
 
-        {/* Minimalist Input - No rounded corners, just a clean line */}
         <motion.form
           initial={{ opacity: 0, width: "50%" }}
           whileInView={{ opacity: 1, width: "100%" }}
@@ -89,7 +86,6 @@ const JoinTheClub = () => {
           </button>
         </motion.form>
 
-        {/* Small Legal/Privacy Note */}
         <motion.p 
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 0.3 }}
@@ -99,7 +95,6 @@ const JoinTheClub = () => {
         </motion.p>
       </div>
 
-      {/* Luxury Watermark */}
       <div 
         style={{
           position: "absolute",
@@ -119,4 +114,4 @@ const JoinTheClub = () => {
   );
 };
 
-export default JoinTheClub;
+export default JoinTheClub; 
