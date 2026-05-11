@@ -1,12 +1,21 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import welcomeImg from "../assets/welcome.jpg"; // Reference image_e6445b.jpg style
+import welcomeImg from "../assets/welcome.jpg"; 
 
 const gold = "#c9a96e";
 const dark = "#0d0b09";
 const cream = "#f5f0e8";
 
 const WelcomeSection = () => {
+  // 1. Initialize scroll tracking
+  const { scrollYProgress } = useScroll();
+  
+  // 2. Create parallax offsets
+  // Background text moves faster (-150px)
+  const yText = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  // Gold frame moves slower (-30px) for a "float" effect
+  const yFrame = useTransform(scrollYProgress, [0, 1], [0, -30]);
+
   return (
     <section 
       style={{ 
@@ -18,14 +27,12 @@ const WelcomeSection = () => {
     >
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
         
-        {/* LEFT SIDE: VISUAL STORYTELLING (7 Columns) */}
+        {/* LEFT SIDE: VISUAL STORYTELLING */}
         <div className="relative lg:col-span-7">
-          {/* Decorative Gold Frame behind image */}
+          {/* Parallax Gold Frame */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5 }}
             style={{
+              y: yFrame,
               position: "absolute",
               top: "-20px",
               left: "-20px",
@@ -50,7 +57,6 @@ const WelcomeSection = () => {
               className="w-full h-[500px] md:h-[700px] object-cover grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
             />
             
-            {/* Floating Detail Tag */}
             <div className="absolute bottom-0 right-0 bg-white/10 backdrop-blur-md p-6 border-l border-t border-white/20">
               <p className="text-[#c9a96e] text-[8px] tracking-[4px] uppercase mb-1">Est.</p>
               <p className="text-white text-[12px] tracking-[2px]">MMXXIV</p>
@@ -58,8 +64,8 @@ const WelcomeSection = () => {
           </motion.div>
         </div>
 
-        {/* RIGHT SIDE: THE NARRATIVE (5 Columns) */}
-        <div className="lg:col-span-5 flex flex-col items-start">
+        {/* RIGHT SIDE: THE NARRATIVE */}
+        <div className="lg:col-span-5 flex flex-col items-start relative z-20">
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -89,8 +95,7 @@ const WelcomeSection = () => {
               Claire Riche is more than a boutique—it is a study in 
               the art of living well. Every piece in our collection 
               is curated for the ethereal silhouette, blending timeless 
-              craftsmanship with modern luxury. We believe in the beauty 
-              of the understated.
+              craftsmanship with modern luxury.
             </p>
 
             <motion.button
@@ -109,9 +114,10 @@ const WelcomeSection = () => {
         </div>
       </div>
 
-      {/* Background Vertical Text (Luxury Detail) */}
-      <div 
+      {/* Background Vertical Text with Parallax */}
+      <motion.div 
         style={{
+          y: yText,
           position: "absolute",
           top: "10%",
           left: "2%",
@@ -125,7 +131,7 @@ const WelcomeSection = () => {
         }}
       >
         ELEVATION
-      </div>
+      </motion.div>
     </section>
   );
 };
